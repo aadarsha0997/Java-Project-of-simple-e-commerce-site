@@ -75,5 +75,12 @@ public class ProductController {
                 .status(HttpStatus.CREATED)
                 .body("Product added sucessfully");
     }
+
+    @GetMapping("/api/products/search")
+    public ResponseEntity<List<Product>> searchProducts(@RequestParam String keyword){
+        System.out.println(keyword);
+        List<Product> products=service.searchProducts(keyword);
+        return new ResponseEntity<>(products,HttpStatus.OK);
+    }
 }
 

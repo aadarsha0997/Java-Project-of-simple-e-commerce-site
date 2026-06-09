@@ -125,4 +125,8 @@ public class ProductService {
 
         repo.delete(product);
     }
+
+    public List<Product> searchProducts(String keyword) {
+        return repo.searchProduct(keyword);
+    }
 }
